@@ -1,16 +1,23 @@
 #! bin/bash -x
 
-echo "welcome"
-choice=1
 
+choice=1
+emprate=24
+#emphour=8
 present=$((RANDOM%2 + 1))
 
 if [ $present -eq $choice ]
 then
-echo  " employee present "
+emphour=8
+ salary=$(( emprate*emphour))
+echo $salary
 else
-echo  " employee absent "
+echo "salary=0"
+
 fi
+
+
+
 
 
 
