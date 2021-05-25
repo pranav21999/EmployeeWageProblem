@@ -1,25 +1,29 @@
 #! bin/bash -x
 
-presentfull=1
-presentpart=2
-emprate=50
+present_full_time=1
+present_part_time=2
+rate=50
+totalhour=0
+i=0
 
-present=$((RANDOM % 3 ))
- 
-for ((i=1;i<=21;i++))
+while [ $i -lt 20 ] && [ $totalhour -lt 80 ];
 do
+((i++))
+empcheck=$(( RANDOM % 3 ))
 
 case $empcheck in
+
                 $present_full_time) emphour=8;;
                 $present_part_time) emphour=4;;
-                emphrs=0) echo"employeee is not present";;
+                *) emphour=0;;
 esac
+
+salary=$(( emphour * rate ))
+totalhour=$(( totalhour+emphour))
+echo "salary is:"$salary
+
+
 done
-
-salary=$(( emprate*emphour))
-
-echo "salary of the employee is: "$salary
-
 
 
 
