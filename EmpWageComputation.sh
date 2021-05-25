@@ -5,18 +5,16 @@ presentpart=2
 emprate=50
 
 present=$((RANDOM % 3 ))
- if [ $present -eq $presentfull ]
-        then
-         emphour=8
-        echo "employee present is full-time"
- elif  [ $present -eq $presentpart ]
-        then
-        echo "employee present is part-time"
-         emphour=4
- else
-        salary=0
-        echo "employee is absent"
- fi
+ 
+
+case $empcheck in
+
+                $present_full_time) emphour=8;;
+                $present_part_time) emphour=4;;
+                emphrs=0) echo"employeee is not present";;
+esac
+
+
 
 salary=$(( emprate*emphour))
 
