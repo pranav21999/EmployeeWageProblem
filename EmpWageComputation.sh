@@ -26,6 +26,7 @@ echo "salary is:"$salary
 done
 totalsalary=$(( totalhour*rate))
 echo $totalsalary
+echo "totalhours is : " $totalhour
 
 
 
