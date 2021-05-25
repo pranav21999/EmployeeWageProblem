@@ -11,14 +11,14 @@ case $empcheck in
 
                 $present_full_time) emphour=8;;
                 $present_part_time) emphour=4;;
-                emphrs=0) echo"employeee is not present";;
+                emphrs=0) emphour=0 echo"employeee is not present";;
 esac
 
 
 
 salary=$(( emprate*emphour))
 
-echo "salary of the employee is"$salary
+echo "salary of the employee is: "$salary
 
 
 
